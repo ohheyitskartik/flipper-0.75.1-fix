@@ -1,0 +1,38 @@
+{
+  "scripts": {
+    "copy-schema": "fcli ensure static/schemas/plugin-package && fcli copy ../desktop/pkg/schemas/plugin-package-v2.json static/schemas/plugin-package/v2.json -o",
+    "start": "yarn copy-schema && yarn generate-uidocs && docusaurus start",
+    "build": "yarn copy-schema && yarn generate-uidocs && docusaurus build",
+    "publish-gh-pages": "docusaurus deploy",
+    "write-translations": "docusaurus write-translations",
+    "version": "docusaurus version",
+    "rename-version": "docusaurus rename-version",
+    "generate-uidocs": "node ./generate-uidocs.js"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.8.3",
+    "@docusaurus/core": "^2.0.0-alpha.66",
+    "@docusaurus/plugin-client-redirects": "2.0.0-alpha.68",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.66",
+    "classnames": "^2.2.6",
+    "docblock-parser": "^1.0.0",
+    "docusaurus-plugin-internaldocs-fb": "^0.5.7",
+    "file-cli": "^1.2.0",
+    "glob": "^7.1.3",
+    "internaldocs-fb-helpers": "^1.2.0",
+    "mermaid": "^8.8.4",
+    "react": "^16.13.1",
+    "react-docgen": "^5.2.1",
+    "react-dom": "^16.13.1"
+  },
+  "dependencies": {},
+  "resolutions": {
+    "axios": "0.21.1",
+    "minimist": "1.2.3",
+    "kind-of": "6.0.3",
+    "serialize-javascript": "^3.1.0",
+    "node-forge": "^0.10.0",
+    "node-fetch": "^2.6.1",
+    "immer": "^8.0.1"
+  }
+}

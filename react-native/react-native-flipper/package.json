@@ -1,0 +1,40 @@
+{
+  "name": "react-native-flipper",
+  "title": "React Native Flipper Bindings",
+  "version": "0.75.1",
+  "description": "Flipper bindings for React Native",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facebook/flipper.git",
+    "baseUrl": "https://github.com/facebook/flipper/tree/master/react-native/react-native-flipper"
+  },
+  "keywords": [
+    "react-native",
+    "flipper"
+  ],
+  "author": {
+    "name": "Facebook Inc"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0",
+    "react-native": ">0.62.0"
+  },
+  "devDependencies": {
+    "react": "^17.0.1",
+    "react-native": "^0.63.3"
+  },
+  "resolutions": {
+    "logkitty": "0.7.1",
+    "minimist": "1.2.3",
+    "kind-of": "6.0.3",
+    "node-fetch": "^2.6.1"
+  }
+}

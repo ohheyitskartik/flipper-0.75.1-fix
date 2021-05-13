@@ -1,0 +1,57 @@
+---
+id: js-setup
+title: Building a Desktop Plugin
+sidebar_label: Building a Desktop Plugin
+---
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import {FbInternalOnly, OssOnly} from 'internaldocs-fb-helpers';
+
+Now that we have the native side covered, let's display the data we're sending
+on the desktop side. You can check out the full workflow of building Flipper desktop
+plugins here: https://fbflipper.com/docs/extending/js-setup.
+
+<img alt="Custom cards UI for our sea mammals plugin" src={useBaseUrl("img/js-custom.png")} />
+
+## Dynamic Plugin loading
+
+<FbInternalOnly>
+[FB-Only] After scaffolding and starting Flipper from source, no further steps are needed to setup the desktop plugin. 
+</FbInternalOnly>
+
+<OssOnly>
+
+By default, Flipper will start with the plugins it was bundled with. You can
+configure it to also look for plugins in custom directories. To do that,
+modify the `~/.flipper/config.json` file that is created the first time
+you start Flipper and add a newly created directory the `pluginPaths` attribute.
+
+Your file will then look something like this:
+
+```json
+{
+  "pluginPaths": [
+    "~/Flipper/custom-plugins/"
+  ],
+  ...
+}
+```
+
+## Creating the Plugin Package
+
+With the loading part out of the way, we can create the new plugin. For that, first create a new folder inside the custom plugins directory. Then use `flipper-pkg init` to initialise a new Flipper desktop plugin package.
+`flipper-pkg` is a NPM module, so we can run it directly using `npx` if Node and NPM are installed.
+
+```bash
+$ cd ~/Flipper/custom-plugins/
+$ npx flipper-pkg init
+```
+
+The tool will ask you to provide "id" and "title" for your plugin. Use "sea-mammals" as "id" and "Sea Mammals" as "title". After that the tool will create two files in the directory: `package.json` and `src/index.tsx`.
+
+See [package.json](https://github.com/facebook/flipper/blob/master/desktop/plugins/seamammals/package.json) for an example.
+
+To ensure there are no errors in the defined plugin, install packages (using `yarn install` or `npm install`) and execute script `lint` (`yarn lint` or `npm run lint`) which shows all the mismatches that should be fixed to make the plugin definition valid.
+
+Now that our package has been set up, we are ready to build a UI for our plugin. Either by using a standardized table-based plugin, or by creating a custom UI.
+
+</OssOnly>

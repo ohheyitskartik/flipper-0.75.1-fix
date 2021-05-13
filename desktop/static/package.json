@@ -1,0 +1,17 @@
+{
+  "name": "flipper-static",
+  "version": "0.0.0",
+  "main": "index.js",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "electron-devtools-installer": "^3.1.1",
+    "fix-path": "^3.0.0",
+    "mac-ca": "^1.0.4",
+    "mkdirp": "^1.0.4",
+    "node-fetch": "^2.6.1",
+    "ws": "^7.4.2",
+    "xdg-basedir": "^4.0.0",
+    "yargs": "^16.2.0"
+  }
+}
